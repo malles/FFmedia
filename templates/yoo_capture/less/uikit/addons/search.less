@@ -1,0 +1,133 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Search component
+//
+// ==========================================================================
+
+
+// Variables
+// ========================================================================
+
+@search-width:                                  @global-height + 10;
+@search-focus-width:                            210px;
+@search-height:                                 @global-height + 10;
+@search-padding:                                50px;
+@search-border:                                 @global-secondary-background;
+@search-color:                                  @global-color;
+@search-placeholder-color:                      transparent;
+@search-icon-size:                              20px;
+@search-icon-color:                             @global-primary-background;
+@search-close-size:                             18px;
+@search-close-color:                            @global-color;
+
+@dropdown-search-background:                    @global-light-background;
+@dropdown-search-color:                         @global-color;
+@dropdown-search-navbar-margin-top:             35px;
+@dropdown-search-navbar-margin-right:           -15px;
+
+@nav-search-color:                              @global-color;
+@nav-search-active-background:                  darken(@global-light-background, 5%);
+@nav-search-active-color:                       @global-primary-background;
+@nav-search-header-color:                       @global-muted-color;
+@nav-search-divider-border:                     @global-border;
+@nav-search-nested-color:                       @global-color;
+@nav-search-nested-hover-color:                 @global-primary-background;
+
+@offcanvas-search-background:                   rgba(0,0,0,0);
+@offcanvas-search-border:                       @global-contrast-color;
+@offcanvas-search-color:                        @global-contrast-color;
+@offcanvas-search-placeholder-color:            fade(@global-contrast-color, 20%);
+@offcanvas-search-icon-color:                   fade(@global-contrast-color, 20%);
+
+
+// Component
+// ==========================================================================
+
+.hook-search() {}
+
+.hook-search-icon() { padding: 0 0; }
+
+
+// Sub-object `uk-search-field`
+// ==========================================================================
+
+.hook-search-field() {
+    position: relative;
+    padding: 0;
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.hook-search-field-focus() { border: none; }
+
+
+// Sub-object `uk-search-close`
+// ==========================================================================
+
+.hook-search-close() { z-index: 2; }
+
+
+// Modifier: `uk-dropdown-search`
+// ==========================================================================
+
+.hook-dropdown-search() { margin-top: 3px; }
+
+
+// Modifier `uk-nav-search`
+// ==========================================================================
+
+//
+// Items
+//
+
+.hook-nav-search() {
+
+    -webkit-transition: background ease-in-out 0.3s;
+    transition: background ease-in-out 0.3s;
+
+    &:hover { color: @global-primary-background; }
+
+}
+
+// Active
+.hook-nav-search-active() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-search-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-search-divider() {}
+
+
+// Search in offcanvas
+// ==========================================================================
+
+.hook-offcanvas-search-field() {
+    padding: 0 @search-padding;
+    cursor: text;
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-search-misc() {
+
+    // Sub-object `uk-search-field`
+    // ========================================================================
+
+    .uk-search-field:focus,
+    .uk-search.uk-active .uk-search-field {
+        padding: 0 @search-padding;
+        cursor: text;
+    }
+
+}

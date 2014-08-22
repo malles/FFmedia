@@ -1,0 +1,102 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Navbar component
+//
+// ==========================================================================
+
+// Variables
+// ========================================================================
+
+@navbar-background:                                 @global-background;
+@navbar-color:                                      @global-color;
+@navbar-link-color:                                 @global-link-color;
+@navbar-link-hover-color:                           @global-link-hover-color;
+@navbar-nav-height:                                 120px;
+@navbar-nav-line-height:                            @navbar-nav-height;
+@navbar-nav-color:                                  #777;
+@navbar-nav-font-size:                              22px;
+@navbar-nav-font-weight:                            @base-body-font-weight;
+@navbar-nav-font-family:                            @base-body-font-family;
+@navbar-nav-hover-background:                       none;
+@navbar-nav-hover-color:                            @global-secondary-background;
+@navbar-nav-onclick-background:                     none;
+@navbar-nav-onclick-color:                          @global-primary-background;
+@navbar-nav-active-background:                      none;
+@navbar-nav-active-color:                           @global-primary-background;
+@navbar-nav-subtitle-font-size:                     14px;
+@navbar-brand-font-size:                            @navbar-nav-font-size;
+@navbar-brand-color:                                @global-primary-background;
+@navbar-brand-hover-color:                          @global-light-color;
+@navbar-toggle-font-size:                           round(@global-font-size * 1.28);
+@navbar-toggle-color:                               @global-color;
+@navbar-toggle-hover-color:                         @global-color;
+
+//
+// New
+//
+
+@navbar-nav-before-hover-color:                     @global-primary-background;
+
+@navbar-nav-subtitle-left-margin:                   30px;
+
+// Component
+// ==========================================================================
+
+.hook-navbar() {}
+
+// Sub-object: `uk-navbar-nav`
+// ==========================================================================
+
+.hook-navbar-nav() { margin: auto; }
+
+// Hover 
+.hook-navbar-nav-hover() {}
+
+// OnClick
+.hook-navbar-nav-onclick() {}
+
+// Active
+.hook-navbar-nav-active() {}
+
+
+// Sub-object: `uk-navbar-content`
+// ==========================================================================
+
+.hook-navbar-content() { padding: 0; }
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-navbar-misc() {
+
+    ul.uk-navbar-nav > li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: @navbar-nav-before-hover-color;
+    opacity: 0;
+    -webkit-transition: height 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+    -moz-transition: height 0.5s, opacity 0.5s, -moz-transform 0.5s;
+    transition: height 0.5s, opacity 0.5s, transform 0.5s;
+    }
+
+    ul.uk-navbar-nav > li:hover:before {
+        height: 8px;
+        background: @navbar-nav-before-hover-color;
+        opacity: 1;
+    }
+
+    .uk-navbar-nav-subtitle > i + div { margin-left: @navbar-nav-subtitle-left-margin; }
+
+    .uk-navbar-brand {
+    font-weight: normal;
+    line-height: @navbar-nav-height;
+    padding: 0;
+}
+
+}

@@ -1,0 +1,107 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Base component
+//
+// ==========================================================================
+
+// Variables
+// ========================================================================
+
+@base-body-background:                          @global-background;
+@base-body-font-family:                         'Source Sans Pro';
+@base-body-font-weight:                         300;
+@base-body-font-size:                           @global-font-size;
+@base-body-line-height:                         @global-line-height;
+@base-body-color:                               @global-color;
+@base-link-color:                               @global-link-color;
+@base-link-hover-color:                         @global-link-hover-color;
+@base-em-color:                                 @global-primary-background;
+@base-ins-background:                           fade(@global-primary-background, 20%);
+@base-ins-color:                                @global-color;
+@base-mark-background:                          fade(@global-primary-background, 20%);
+@base-mark-color:                               @global-color;
+@base-selection-background:                     @global-primary-background;
+@base-selection-color:                          @global-contrast-color;
+@base-margin-vertical:                          @global-margin;
+@base-heading-font-family:                      'Source Sans Pro';
+@base-heading-font-weight:                      300;
+@base-heading-color:                            @global-primary-background;
+@base-heading-margin-top:                       @global-large-margin;
+@base-h1-font-size:                             round(@global-font-size * 3);
+@base-h1-line-height:                           round(@base-h1-font-size * 1.2);
+@base-h2-font-size:                             round(@global-font-size * 2.4);
+@base-h2-line-height:                           round(@base-h2-font-size * 1);
+@base-h3-font-size:                             round(@global-font-size * 2);
+@base-h3-line-height:                           round(@base-h3-font-size * 1.5);
+@base-h4-font-size:                             round(@global-font-size * 1.5);
+@base-h4-line-height:                           round(@base-h4-font-size * 1.5);
+@base-h5-font-size:                             @global-font-size;
+@base-h5-line-height:                           @global-line-height;
+@base-h6-font-size:                             round(@global-font-size * 0.85);
+@base-h6-line-height:                           round(@base-h6-font-size * 1.5);
+@base-hr-border:                                @global-border;
+@base-blockquote-border:                        @global-border;
+@base-blockquote-small-color:                   @global-muted-color;
+@base-blockquote-font-size:                     round(@global-font-size * 1.14);
+@base-blockquote-line-height:                   round(@base-blockquote-font-size * 1.37);
+@base-code-color:                               @global-primary-background;
+@base-code-font-size:                           round(@global-font-size * 0.85);
+@base-pre-background:                           @global-light-background;
+@base-pre-color:                                @global-color;
+@base-pre-font-size:                            round(@global-font-size * 0.85);
+@base-pre-line-height:                          round(@base-pre-font-size * 1.5);
+
+//
+// New
+//
+
+@base-code-padding:                             2px;
+@base-code-border-background:                   @global-light-background;
+@base-code-border-color:                        darken(@global-light-background, 10%);
+
+// Body
+// ==========================================================================
+
+.hook-base-body() { -webkit-font-smoothing: antialiased; }
+
+// Text-level semantics
+// ==========================================================================
+
+
+// Code and preformatted text
+// ==========================================================================
+
+.hook-base-code() {
+    background: @base-code-border-background;
+    padding: @base-code-padding;
+    border: 1px solid @base-code-border-color;
+}
+
+.hook-base-code-reset() {
+    background: none;
+    padding: none;
+    border: none;
+}
+
+.hook-base-pre() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-base-misc() {
+
+    /*
+    * Links
+    */
+
+    a {
+        -webkit-transition: color 0.3s ease-in-out;
+        -moz-transition: color 0.3s ease-in-out; 
+        transition: color 0.3s ease-in-out;
+    }
+
+    a:hover { text-decoration: none; }
+
+}

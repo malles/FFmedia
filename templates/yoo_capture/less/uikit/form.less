@@ -1,0 +1,99 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Form component
+//
+// ==========================================================================
+
+// Variables
+// ========================================================================
+
+@form-height:                               @global-height;
+@form-small-height:                         @global-small-height;
+@form-large-height:                         @global-large-height;
+@form-small-font-size:                      round(@global-font-size * 0.85);
+@form-large-font-size:                      round(@global-font-size * 1.3);
+@form-border:                               @global-border;
+@form-background:                           rgba(255,255,255,0);
+@form-color:                                @global-color;
+@form-placeholder-color:                    @global-muted-color;
+@form-focus-border:                         fade(@global-light-color, 30%);
+@form-focus-background:                     fade(@global-light-background, 10%);
+@form-focus-color:                          @global-primary-background;
+@form-disabled-border:                      @global-muted-color;
+@form-disabled-background:                  @global-muted-background;
+@form-disabled-color:                       @global-muted-color;
+@form-danger-border:                        @global-danger-background;
+@form-danger-background:                    fade(@global-danger-background, 10%);
+@form-danger-color:                         @global-danger-background;
+@form-success-border:                       @global-success-background;
+@form-success-background:                   fade(@global-success-background, 10%);
+@form-success-color:                        @global-success-background;
+@form-blank-border:                        @global-border;
+@form-legend-border:                        @global-border;
+@form-legend-font-size:                     round(@global-font-size * 1.28);
+@form-legend-line-height:                   round(@form-legend-font-size * 1.66);
+@form-gutter:                               @global-margin;
+@form-icon-width:                           @global-height;
+@form-icon-font-size:                       @global-font-size;
+@form-icon-color:                           @global-muted-color;
+
+//
+// New
+//
+
+@form-font-weight:                          @base-body-font-weight;
+@form-label-font-weight:                    @base-body-font-weight;
+
+// Component
+// ==========================================================================
+
+.hook-form() {
+    
+    padding: 8px 10px;
+    font-weight: @form-font-weight;
+
+    .uk-search-field:focus { border: 3px solid @global-secondary-background; }
+
+}
+
+// Focus state
+.hook-form-focus() {}
+
+// Disabled state
+.hook-form-disabled() {}
+
+
+// Validation states
+// ==========================================================================
+
+//
+// Error state
+//
+
+.hook-form-danger() {}
+
+//
+// Success state
+//
+ 
+.hook-form-success() {}
+
+
+// Size modifiers
+// Using !important to keep the selector simple
+// ==========================================================================
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-form-misc() {
+
+    .uk-form-stacked .uk-form-label { font-weight: @form-label-font-weight; }
+
+    .uk-form-small { padding: 4px 6px !important; }
+
+    .uk-form-large { padding: 14px 16px !important; }
+
+}

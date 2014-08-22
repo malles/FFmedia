@@ -1,0 +1,51 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Icon component
+//
+// ==========================================================================
+
+// Variables
+// ========================================================================
+
+@icon-button-width:                                 50px;
+@icon-button-height:                                @icon-button-width;
+@icon-button-border-radius:                         0;
+@icon-button-background:                            @global-light-background;
+@icon-button-font-size:                             round(@icon-button-width * 0.5);
+@icon-button-color:                                 @global-color;
+@icon-button-hover-background:                      @global-primary-background;
+@icon-button-hover-color:                           @global-contrast-color;
+@icon-button-active-background:                     @global-primary-background;
+@icon-button-active-color:                          @global-contrast-color;
+
+// Component
+// ==========================================================================
+
+
+// Modifier: `uk-icon-button`
+// ==========================================================================
+
+.hook-icon-button() {
+    -webkit-transition: -webkit-transform ease-in-out 0.2s;
+    transition: transform ease-in-out 0.2s;
+}
+
+// Hover
+.hook-icon-button-hover() {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+// Active
+.hook-icon-button-active() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-icon-misc() {
+
+    .uk-icon-button + .uk-icon-button { margin-left: 5px; }
+
+}

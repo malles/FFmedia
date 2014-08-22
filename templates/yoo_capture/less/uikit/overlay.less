@@ -1,0 +1,72 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+//
+// Overlay component
+//
+// ==========================================================================
+
+// Variables
+// ========================================================================
+
+@overlay-area-background:                           fade(@global-secondary-background, 80%);
+@overlay-area-icon:                                 "+";
+@overlay-area-icon-size:                            @overlay-area-size - 20px;
+@overlay-area-icon-color:                           @global-contrast-color;
+@overlay-caption-background:                        fade(@global-secondary-background, 80%);
+@overlay-caption-padding:                           @global-margin;
+@overlay-caption-color:                             @global-contrast-color;
+
+//
+// New
+//
+
+@overlay-area-size:                                 70px;
+@overlay-area-icon-font-family:                     'Source Sans Pro';
+@overlay-area-icon-font-weight:                     @base-body-font-weight;
+
+// Component
+// ==========================================================================
+
+
+// Sub-object `uk-overlay-area`
+// ==========================================================================
+
+.hook-overlay-area() {
+    width: @overlay-area-size;
+    height: @overlay-area-size;
+    margin: auto auto;
+    border-radius: 100%;
+}
+.hook-overlay-area-icon() {
+    font-family: @overlay-area-icon-font-family;
+    font-weight: @overlay-area-icon-font-weight;
+}
+
+
+// Sub-object `uk-overlay-caption`
+// ==========================================================================
+
+.hook-overlay-caption() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-overlay-misc() {
+
+    .uk-overlay { overflow: hidden; }
+
+    /* Animation fade */
+    .uk-thumbnail .uk-overlay img {
+        -webkit-transition: -webkit-transform .4s ease-in-out;
+        transition: transform .4s ease-in-out;
+    }
+
+    /* Animation scale */
+    .uk-thumbnail:hover .uk-overlay .uk-overlay-area { left: 0; }
+    .uk-thumbnail:hover .uk-overlay img > { 
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+}
