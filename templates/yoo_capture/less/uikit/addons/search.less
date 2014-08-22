@@ -10,7 +10,7 @@
 // ========================================================================
 
 @search-width:                                  @global-height + 10;
-@search-focus-width:                            210px;
+@search-focus-width:                            150px;
 @search-height:                                 @global-height + 10;
 @search-padding:                                50px;
 @search-border:                                 @global-secondary-background;
@@ -39,6 +39,11 @@
 @offcanvas-search-color:                        @global-contrast-color;
 @offcanvas-search-placeholder-color:            fade(@global-contrast-color, 20%);
 @offcanvas-search-icon-color:                   fade(@global-contrast-color, 20%);
+
+@search-close-icon: "\f00d";
+@search-close-size: 14px;
+@search-close-color: rgba(0, 0, 0, 0.2);
+@search-close-icon-loading: "\f110";
 
 
 // Component
@@ -74,6 +79,54 @@
 
 .hook-dropdown-search() { margin-top: 3px; }
 
+/* Sub-object `uk-search-close`
+ ========================================================================== */
+
+/*
+ * 1. Required for `button` elements
+ * 2. Needed for Safari
+ */
+
+.uk-search-close {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: @search-padding;
+  line-height: @search-height;
+  text-align: center;
+  font-size: @search-close-size;
+  color: @search-close-color;
+  /* 1. */
+  padding: 0;
+  border: 0;
+  -webkit-appearance: none;
+  /* 2. */
+  background: transparent;
+  .hook-search-close;
+}
+
+.uk-loading > .uk-search-close,
+.uk-active > .uk-search-close {
+  display: block;
+}
+
+/*
+ * Icon
+ */
+
+.uk-search-close:after {
+  display: block;
+  content: @search-close-icon;
+  font-family: FontAwesome;
+}
+
+/* Loading icon */
+.uk-loading > .uk-search-close:after {
+  content: @search-close-icon-loading;
+  -webkit-animation: uk-rotate 2s infinite linear;
+  animation: uk-rotate 2s infinite linear;
+}
 
 // Modifier `uk-nav-search`
 // ==========================================================================
