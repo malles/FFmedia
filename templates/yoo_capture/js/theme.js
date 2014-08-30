@@ -49,4 +49,17 @@ jQuery(function($) {
         }());
         return false;
     });
+
+    $("[data-bix-slideshow] div").addClass('uk-animation-slide-right').on('bix.slideshow.hide', function () {
+        var ele = $(this), clone = ele.clone().removeClass('uk-animation-slide-right')
+            .addClass('uk-animation-slide-left uk-animation-reverse')
+            .css({position:'absolute'});
+        //place clone
+        ele.before(clone);
+        //remove clone
+        setTimeout(function () {clone.remove();},700);
+    });
+
+
+
 });

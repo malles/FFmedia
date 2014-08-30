@@ -86,7 +86,6 @@
             <field type="table" name="grid">
                 <rows label="Position">
                     <row>top-a</row>
-                    <row>top-b</row>
                     <row>bottom-a</row>
                     <row>bottom-b</row>
                     <row>bottom-c</row>

@@ -90,9 +90,9 @@ include($this['path']->path('layouts:theme.config.php'));
 		<?php endif; ?>
 
 		<?php if ($this['widgets']->count('top-b')) : ?>
-		<div class="tm-block <?php echo $block_classes['top-b'], $slant_classes['top-b']; ?>">
+		<div class="tm-block <?php echo $block_classes['top-b'], $slant_classes['top-b']; ?>" id="bix-slideholder">
 			<div class="uk-container uk-container-center">
-				<section class="<?php echo $grid_classes['top-b']; ?>" data-uk-grid-match="{target:'> div > .uk-panel'}" data-uk-grid-margin><?php echo $this['widgets']->render('top-b', array('layout'=>$this['config']->get('grid.top-b.layout'))); ?></section>
+				<section class="<?php echo $grid_classes['top-b']; ?>" id="bix-slideshow" data-bix-slideshow="{delay:7500,nav:false}"><?php echo $this['widgets']->render('top-b'); ?></section>
 			</div>
 			<?php if (!empty($slant_classes['top-parallax'])) : ?><div class="tm-slant-block-top"></div><?php endif; ?>
 			<?php if (!empty($slant_classes['top-b'])) : ?><div class="tm-slant-block-bottom"></div><?php endif; ?>

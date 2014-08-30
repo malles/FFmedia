@@ -714,3 +714,39 @@ a:hover.tm-totop-scroller:after { color: lighten(@global-primary-background, 30%
     margin-top: -130px;
   }
 }
+
+a[data-uk-smooth-scroll] {
+  img {
+    /* Webkit for Chrome and Safari */
+    -webkit-transform: scale(1, 1); // This is the enlarged size scale of the image.
+    -webkit-transition-duration: 500ms;
+    -webkit-transition-timing-function: ease-out;
+
+    /* Webkit for Mozila Firefox */
+    -moz-transform: scale(1, 1);
+    -moz-transition-duration: 500ms;
+    -moz-transition-timing-function: ease-out;
+
+    /* Webkit for IE( Version: 11, 10 ) */
+    -ms-transform: scale(1, 1);
+    -ms-transition-duration: 500ms;
+    -ms-transition-timing-function: ease-out;
+  }
+  img:hover {
+    /* Webkit for Chrome and Safari */
+    -webkit-transform: scale(0.9, 0.9); // This is the scale for the normal size of the image.
+    -webkit-transition-duration: 500ms;
+    -webkit-transition-timing-function: ease-out;
+
+    /* Webkit for Mozila Firefox */
+    -moz-transform: scale(0.9, 0.9);
+    -moz-transition-duration: 500ms;
+    -moz-transition-timing-function: ease-out;
+
+    /* Webkit for IE( Version: 11, 10 ) */
+    -ms-transform: scale(0.90, 0.90);
+    -ms-transition-duration: 500ms;
+    -ms-transition-timing-function: ease-out;
+  }
+}
+
